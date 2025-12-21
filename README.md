@@ -1,163 +1,194 @@
-# AIP-Standard
-AIP (AI Project Format) is an open, ZIP-based standard for complete AI-generated projects. It packages audio, video, images, prompts, scripts, timelines, settings, metadata, licensing, and provenance into a single .aip file for fully reproducible AI workflows.
+AIFP — AI First Project Format (.aifp)
+Part of the AI First Exchange (AIFX)
 
-🗂️ AIP – AI Project Format
-A unified open container for AI-generated multi-asset projects
+AIFP (AI First Project Format) is an open, ZIP-based container standard for complete AI-generated projects. It packages audio, video, images, prompts, scripts, timelines, settings, metadata, licensing, and provenance into a single portable .aifp file designed for transparent, inspectable, and exchangeable AI workflows.
 
-File extension: .aip
-Version: 1.0.0
+AIFP is the project-level container in the AIFX format family, enabling creators, tools, and platforms to share complex, multi-asset AI productions with clear structure, declared authorship, and long-term interoperability.
+
+🧩 Relationship to AIFX
+
+AIFP is part of the AI First Exchange (AIFX) family of AI-native formats:
+
+AIFM — AI First Music (.aifm)
+
+AIFV — AI First Video (.aifv)
+
+AIFI — AI First Image (.aifi)
+
+AIFP — AI First Project (.aifp)
+
+AIFP is designed to bundle and reference AIFM, AIFV, and AIFI assets within a single project container while preserving provenance, workflow metadata, and verification status.
 
 📚 Overview
 
-AIP (AI Project Format) is an open, ZIP-based container standard designed to store complete AI project environments — including audio, video, images, prompts, scripts, metadata, timelines, settings, and model information — in one portable file.
+An .aifp file represents a complete AI project environment.
+It may include:
 
-AIP is the foundation for fully reproducible AI workflows, enabling creators, platforms, and tools to exchange complex AI projects seamlessly.
+media assets (audio, video, images)
 
-📦 What’s Inside an .aip File?
-An .aip file is a ZIP container with a structured directory:
+prompts and narratives
+
+timelines and sequences
+
+AI parameters and toolchains
+
+declared authorship and contributors
+
+licensing and rights documentation
+
+verification and integrity metadata
+
+AIFP prioritizes workflow transparency and reproducibility-oriented documentation, without asserting guarantees beyond the recorded creation process.
+
+📦 AIFP Container Structure
+
+An .aifp file is a ZIP container with a standardized directory layout:
+
 /
-  manifest.json                     # REQUIRED: main project manifest
+  manifest.json                 # REQUIRED: primary project manifest
   assets/
-    audio/                          # OPTIONAL
-    video/                          # OPTIONAL
-    images/                         # OPTIONAL
-    models/                         # OPTIONAL (snapshots or references)
+    audio/                      # OPTIONAL
+    video/                      # OPTIONAL
+    images/                     # OPTIONAL
+    models/                     # OPTIONAL (snapshots or references)
   prompts/
-    generation.txt                  # OPTIONAL: global project prompt
-    narrative.txt                   # OPTIONAL: story/script
-    settings.json                   # OPTIONAL: project-level AI parameters
+    generation.txt              # OPTIONAL: global project prompt
+    narrative.txt               # OPTIONAL: script or story text
+    settings.json               # OPTIONAL: project-level AI parameters
   timeline/
-    sequence.json                   # OPTIONAL: timeline, scenes, layers
-    edits.json                      # OPTIONAL: editor or user edits
+    sequence.json               # OPTIONAL: scenes, layers, timing
+    edits.json                  # OPTIONAL: user or editor changes
   metadata/
-    project.json                    # OPTIONAL: tags, categories, app data
+    project.json                # OPTIONAL: tags, categories, app data
   legal/
-    license.txt                     # OPTIONAL
-    terms.txt                       # OPTIONAL
+    license.txt                 # OPTIONAL
+    terms.txt                   # OPTIONAL
   extra/
-    notes.md                        # OPTIONAL: user notes or documentation
-This structure allows AIP to represent simple or extremely complex AI productions.
+    notes.md                    # OPTIONAL: documentation or comments
 
-🧠 Key Features
-✔ Stores entire AI project environments
 
-AIP can contain:
+This structure allows AIFP to represent projects ranging from simple AI outputs to complex, multi-modal productions.
 
-Audio (music, stems, sound design)
+🧠 Key Capabilities
+✔ Complete AI Project Packaging
 
-Video (clips, scenes, renders)
+AIFP can contain everything needed to inspect, exchange, and continue an AI project, including:
 
-Images (reference art, sprites, concept frames)
+audio (music, stems, sound design)
 
-Prompts (scene-level + global)
+video (scenes, renders, clips)
 
-Scripts & narratives
+images (concept art, frames, references)
 
-Timelines & sequences
+prompts (global and per-scene)
 
-Editor data (cuts, transitions, effects)
+scripts and narratives
 
-Generator settings
+timelines and sequences
 
-Model snapshots or references
+editor or pipeline metadata
 
-Everything needed to recreate or edit an AI project lives in a single .aip.
+AI parameters and tool references
 
-✔ AI-native metadata
+✔ AI-Native Metadata
 
-Preserves:
+AIFP preserves declared AI workflow details such as:
 
-Prompt histories
+prompt histories
 
-Parameter settings
+parameter settings
 
-Model versions
+model identifiers or references
 
-Seed values
+seed values (where available)
 
-Generation engines
+generation engines and toolchains
 
-Processing pipelines
+processing steps
 
-Perfect for reproducibility and collaboration.
+This metadata supports collaboration, auditing, and archival use cases.
 
-✔ Timeline & layer support
+✔ Timeline & Layer Representation
 
-AIP includes a timeline system (timeline/sequence.json) that can represent:
+AIFP includes a timeline model capable of representing:
 
-Scenes
+scenes
 
-Layers
+layers
 
-Keyframes
+cuts and transitions
 
-Cuts
+effects
 
-Transitions
+keyframes
 
-Effects
+multi-modal synchronization
 
-Multi-modal combinations
+This makes AIFP suitable for AI filmmaking, animation, music-video, and interactive workflows.
 
-Designed for video editors, animation pipelines, and multi-asset tools.
+✔ Provenance & Authorship Documentation
 
-✔ Provenance & authorship tracking
+The project manifest may record:
 
-The manifest includes:
+creator identity (declared)
 
-Creator identity
+contributors
 
-AI toolchains
+AI tools and pipelines
 
-Creation timestamps
+creation timestamps
 
-Contributors
+licensing and rights statements
 
-Source models
+AIFP records declared provenance and workflow metadata.
+It does not assert absolute origin beyond the documented creation process.
 
-Rights and licenses
+✔ Extensible & Tool-Friendly
 
-Ideal for publishing, archiving, and professional workflows.
-
-✔ Extensible & tool-ready
-
-AIP is:
+AIFP is designed to be:
 
 ZIP-based
 
 JSON-driven
 
-Easy to parse
+easy to parse
 
-Architecture-agnostic
+architecture-agnostic
 
-Forward-compatible
+forward-compatible
 
-Developers can adapt AIP for:
+Developers can adapt AIFP for:
 
-Music DAWs
+music DAWs
 
-Video editors
+video editors
 
 AI animation tools
 
-Game engines
+game engines
 
 XR / VR creation platforms
 
-📑 manifest.json Structure (Simplified)
+collaborative AI studios
+
+📑 manifest.json (Simplified Example)
 {
-  "aip_version": "1.0.0",
-  "id": "aip-2025-000001",
+  "aifp_version": "1.0.0",
+  "id": "aifp-2025-000001",
   "title": "Project Title",
   "creator": "CreatorName",
-  "description": "Full AI multi-asset project",
+  "description": "AI-first multi-asset project",
   "ai_generated": true,
 
   "provenance": {
     "creator_handle": "YourName",
     "creation_utc": "2025-12-06T03:00:00Z",
-    "tool_chain": ["Suno", "Veo", "Stable Diffusion", "AIP-WRAPPER v1.0"]
+    "tool_chain": [
+      "Suno",
+      "Veo",
+      "Stable Diffusion",
+      "AIFX Converter v1.0"
+    ]
   },
 
   "project": {
@@ -176,54 +207,61 @@ XR / VR creation platforms
   }
 }
 
-🧰 Tools (Coming Soon)
 
-Planned AIP utilities:
+Future versions may optionally include:
 
-aipwrap — package assets + metadata into .aip
+persona
 
-aip-validator — ensure project meets the AIP spec
+verification_tier
 
-aipcore — libraries to read/write AIP containers for apps
+signature
+
+integrity_hash
+
+🛡️ Verification & Integrity (AIFX-Aligned)
+
+AIFP supports AIFX verification tiers through manifest fields:
+
+Declared Authenticity
+
+Verified Creator
+
+Platform / Pipeline Verified (where supported)
+
+Verification attests to metadata completeness, integrity, and signing status, not facts outside the recorded workflow.
 
 🌐 MIME Type
 
 Proposed MIME type:
-application/aip
 
-🛠 Use Cases
-
-AI film + music combined projects
-
-Multi-asset creative workflows
-
-Storyboarding + script + asset packaging
-
-Full-scene AI animation
-
-Cross-tool project portability
-
-Collaborative AI studio work
-
-Publishing “source files” for AI creators
-
-AIP is designed to be the AI equivalent of .zip + .proj + .json combined.
+application/aifp
 
 🔄 Versioning
 
-AIP follows semantic versioning:
+AIFP follows semantic versioning:
 
-1.x.x → Backward-compatible enhancements
+1.x.x — backward-compatible enhancements
 
-2.x.x → Backward-incompatible schema changes
+2.x.x — backward-incompatible schema changes
 
-Unknown fields should be ignored to maintain compatibility.
+Unknown fields should be safely ignored to maintain compatibility.
+
+🛠 Tooling (Planned)
+
+Planned AIFP utilities:
+
+aifpwrap — package assets + metadata into .aifp
+
+aifp-validate — validate files against the spec
+
+aifp-core — libraries for reading/writing AIFP containers
 
 📬 Contributing
 
-AIP is an open specification.
+AIFP is an open specification under the AI First Exchange.
+
 Contributions, proposals, and improvements are welcome.
 
 📝 License
 
-Released under the MIT License.
+This specification is released under the MIT License.
