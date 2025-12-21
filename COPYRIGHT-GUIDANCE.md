@@ -1,46 +1,62 @@
-# COPYRIGHT & HUMAN AUTHORSHIP GUIDANCE (AIP Standard)
+# COPYRIGHT & HUMAN AUTHORSHIP GUIDANCE
+(AIFP Standard — AI First Exchange / AIFX)
 
-The AI Format Foundation recognizes that copyright protection for AI-assisted works requires meaningful human creative contribution. The AIP Standard supports documentation of human authorship in complex, multi-asset AI projects through structured metadata, provenance, and workflow history.
+This document provides **non-authoritative guidance** on documenting
+human creative involvement in AI-assisted projects using AIFX formats.
 
-## 1. Human Authorship Requirements
+It does not constitute legal advice and does not guarantee copyright
+eligibility under any jurisdiction.
 
-An AI-assisted project may qualify for copyright if a human:
-- Designs the overall concept, story, or creative direction  
-- Writes prompts, scripts, instructions, or scene breakdowns  
-- Chooses, arranges, or sequences AI-generated media  
-- Edits or refines assets such as audio, video, images, or text  
-- Makes expressive decisions that shape the final project  
+---
 
-Purely autonomous assembly or generation without human creative involvement is not copyrightable.
+## 1. Human Creative Contribution (General Guidance)
 
-## 2. How AIP Supports Copyright Claims
+In many jurisdictions, copyright protection for AI-assisted works
+depends on the presence of **meaningful human creative contribution**.
 
-AIP metadata captures:
-- Creator identity (name, handle, email)  
-- Human-authored prompts, scripts, and notes  
-- Timeline and sequence metadata  
-- Editing steps for each asset  
-- Provenance of imported files (audio, video, image, text, models)  
-- Timestamps and toolchain history  
+Such contribution may include, but is not limited to:
+- Designing the overall concept, narrative, or creative direction
+- Writing prompts, scripts, instructions, or scene breakdowns
+- Selecting, arranging, sequencing, or curating AI-generated outputs
+- Editing or refining assets such as audio, video, images, or text
+- Making expressive decisions that shape the final work
 
-AIP can serve as a comprehensive record of the human creative process across an entire project.
+Purely autonomous generation or assembly without human creative
+direction may not qualify for copyright protection under current law.
 
-## 3. Recommended Manifest Fields for Legal Compliance
+> Interpretation of copyright eligibility is determined by applicable
+> legal authorities and courts, not by AIFX.
 
-Creators may include these optional fields:
+---
 
-"human_authorship_statement": "I affirm that I contributed creative authorship...",
-"human_signature": "Name or digital signature hash",
-"creator_email": "email@example.com",
-"editorial_notes": "Summary of human creative decisions."
+## 2. How AIFP Supports Documentation
 
+The **AI First Project Format (AIFP)** supports structured documentation
+of declared human involvement through metadata, provenance records,
+and workflow history.
 
-## 4. Ownership
+An AIFP project may include:
+- Declared creator identity (name, handle, optional contact details)
+- Human-authored prompts, scripts, and editorial notes
+- Timeline and sequencing metadata
+- Documented editing or curation steps
+- Provenance records for imported assets
+- Timestamps and declared toolchains
 
-Copyright belongs to the human author(s) who contributed meaningful creative decisions within the project.  
-Unedited or uncurated AI output does not qualify for copyright protection on its own.
+These records are intended to support **transparency and context**
+regarding the creative process.
 
-## 5. Licensing
+---
 
-Creators may include licensing details in `legal/license.txt`, `license.json`, or similar files.  
-AIP users are responsible for complying with all applicable laws and content licenses.
+## 3. Optional Manifest Fields
+
+Creators MAY include the following optional fields in `manifest.json`
+to document declared human involvement:
+
+```json
+"human_authorship_statement": "",
+"human_signature": "",
+"creator_email": "",
+"editorial_notes": "",
+"human_editing_steps": [],
+"human_curated_output": true
